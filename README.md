@@ -29,3 +29,25 @@ Startups in Pune's logistics corridor look for engineers who understand:
 1. **Spatial Data:** Dealing with Lat/Long isn't like dealing with strings or ints.
 2. **System Design:** Moving from script-based execution to an automated pipeline.
 3. **Local Context:** Solving problems specific to the city's infrastructure.
+   Project structure
+
+uber_data_engineering/
+├── data/                   # Local data storage (Git ignored)
+│   ├── raw/                # Bronze: Original CSV/JSON files
+│   ├── transformed/        # Silver: Cleaned Parquet files
+│   └── analytics/          # Gold: Final processed datasets
+├── docker/                 # Docker configuration
+│   └── docker-compose.yml  # To spin up Neo4j and Mage.ai
+├── notebooks/              # For EDA and prototype scripts
+├── scripts/                # SQL scripts for schema creation
+│   ├── ddl_schema.sql      # PostgreSQL/BigQuery table definitions
+│   └── neo4j_queries.cypher # Graph data modeling
+├── src/                    # Source code for the pipeline
+│   ├── __init__.py
+│   ├── extract.py          # API/File ingestion logic
+│   ├── transform.py        # Business logic & cleaning
+│   └── load.py             # Loading to SQL/Neo4j
+├── mage_files/             # If using Mage.ai for orchestration
+├── .gitignore              # To exclude venv/ and data/
+├── requirements.txt
+└── README.md               # Your portfolio documentation
