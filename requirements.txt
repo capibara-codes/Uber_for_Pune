@@ -1,0 +1,8 @@
+pandas>=2.0.0
+numpy>=1.24.0
+python-dateutil
+# For geocoding Pune locations (e.g., Kothrud to Hinjewadi)
+geopy
+# For handling Pune-specific geographic data
+geopandas
+shapely
